@@ -7,7 +7,6 @@ public class Candidate {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id", unique = true, nullable = false)
     private Long id;
 
     @Column(nullable = false)
@@ -19,12 +18,23 @@ public class Candidate {
     @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
+    private Long numberElection;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public void setNumberElection(Long numberElection) {
+        this.numberElection = numberElection;
+    }
+
+    public Long getNumberElection() {
+        return numberElection;
     }
 
     public Long getPartyId() {
